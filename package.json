@@ -1,0 +1,32 @@
+{
+  "name": "hw-scripts",
+  "version": "0.0.0-development",
+  "description": "",
+  "main": "index.js",
+  "bin": {
+    "hw-scripts": "./index.js"
+  },
+  "dependencies": {
+    "cross-spawn": "^6.0.5",
+    "glob": "^7.1.2",
+    "kcd-scripts": "^0.36.1",
+    "prettier": "^1.11.1",
+    "yargs-parser": "^9.0.2"
+  },
+  "devDependencies": {
+    "travis-deploy-once": "^4.4.1",
+    "semantic-release": "^15.1.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 0",
+    "travis-deploy-once": "travis-deploy-once",
+    "semantic-release": "semantic-release"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/newyork-anthonyng/hw-scripts.git"
+  }
+}
