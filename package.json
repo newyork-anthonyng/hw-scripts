@@ -15,6 +15,8 @@
   },
   "devDependencies": {
     "husky": "^0.14.3",
+    "lint-staged": "^7.0.0",
+    "read-pkg-up": "^3.0.0",
     "semantic-release": "^15.1.4",
     "travis-deploy-once": "^4.4.1"
   },

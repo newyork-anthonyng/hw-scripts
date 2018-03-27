@@ -24,11 +24,11 @@ if (script) {
     .join("\n ")
     .trim();
   const fullMessage = `
-  Usage: ${ignoredBin} [script] [--flags]
+Usage: ${ignoredBin} [script] [--flags]
 
-  Available Scripts:
-    ${scriptsAvailableMessage}
-  `;
+Available Scripts:
+  ${scriptsAvailableMessage}
+`;
   console.log(`\n${fullMessage}\n`);
 }
 

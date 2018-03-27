@@ -1,7 +1,29 @@
 const spawn = require("cross-spawn");
+const { resolveBin, resolveHwScripts } = require("../utility");
 
-const validateResult = spawn.sync("npm", ["run", "validate"], {
-  stdio: "inherit"
-});
+const args = process.args.slice(2);
 
-process.exit(validateResult.status);
+const lintStagedResult = spawn.sync(
+  resolveBin("lint-staged"),
+  [
+    "--config",
+    {
+      linters: {
+        "**/*.+(js|less)": [`${kcdScripts} pretty`]
+      }
+    }
+  ],
+  {
+    stdio: "inherit"
+  }
+);
+
+if (lintStagedResult.status !== 0) {
+  process.exit(lintStagedResult.status);
+} else {
+  const validateResult = spawn.sync("npm", ["run", "validate"], {
+    stdio: "inherit"
+  });
+
+  process.exit(validateResult.status);
+}
