@@ -1,18 +1,14 @@
 const spawn = require("cross-spawn");
-const { resolveBin, resolveHwScripts } = require("../utility");
+const path = require("path");
+const { resolveBin } = require("../utility");
 
-const args = process.args.slice(2);
+const args = process.argv.slice(2);
+const here = p => path.join(__dirname, p);
+const hereRelative = p => here(p).replace(process.cwd(), ".");
 
 const lintStagedResult = spawn.sync(
   resolveBin("lint-staged"),
-  [
-    "--config",
-    {
-      linters: {
-        "**/*.+(js|less)": [`${kcdScripts} pretty`]
-      }
-    }
-  ],
+  ["--config", hereRelative("../config/lintstagedrc.js")],
   {
     stdio: "inherit"
   }
