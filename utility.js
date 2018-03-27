@@ -9,11 +9,9 @@ function resolveBin(name, { executable = name } = {}) {
   console.log("bin", bin);
 
   if (typeof bin === "string") {
-    console.log("string", path.join(packageDir, bin));
     return path.join(packageDir, bin);
   }
 
-  console.log("no string", path.join(packageDir, bin[name]));
   return path.join(packageDir, bin[name]);
 }
 
