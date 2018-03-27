@@ -14,8 +14,9 @@
     "yargs-parser": "^9.0.2"
   },
   "devDependencies": {
-    "travis-deploy-once": "^4.4.1",
-    "semantic-release": "^15.1.4"
+    "husky": "^0.14.3",
+    "semantic-release": "^15.1.4",
+    "travis-deploy-once": "^4.4.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 0",
